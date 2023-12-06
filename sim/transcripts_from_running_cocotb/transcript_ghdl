@@ -1,0 +1,16 @@
+rm -f results.xml
+make -f Makefile results.xml
+make[1]: Entering directory '/home/shen/Desktop/VSimProjects/PulseWidthFilter/sim'
+mkdir -p sim_build
+\
+/usr/local/bin/ghdl -i   --workdir=sim_build --work=work /home/shen/Desktop/VSimProjects/PulseWidthFilter/sim/../src/pulseFilterTypes.vhd /home/shen/Desktop/VSimProjects/PulseWidthFilter/sim/../src/pulse_filterComponents.vhd /home/shen/Desktop/VSimProjects/PulseWidthFilter/sim/../src/filterController.vhd /home/shen/Desktop/VSimProjects/PulseWidthFilter/sim/../src/pulseCyclesCounter.vhd /home/shen/Desktop/VSimProjects/PulseWidthFilter/sim/../src/pulseTransmitter.vhd /home/shen/Desktop/VSimProjects/PulseWidthFilter/sim/../src/pulse_filter.vhd && \
+/usr/local/bin/ghdl -m   --workdir=sim_build -Psim_build --work=work pulse_filter
+rm -f results.xml
+MODULE=pulse_filter_tests TESTCASE= TOPLEVEL=pulse_filter TOPLEVEL_LANG=vhdl \
+ /usr/local/bin/ghdl -r  --workdir=sim_build -Psim_build --work=work pulse_filter --vpi=/home/shen/miniconda3/envs/py3_32/lib/python3.7/site-packages/cocotb/libs/libcocotbvpi_ghdl.so  
+loading VPI module '/home/shen/miniconda3/envs/py3_32/lib/python3.7/site-packages/cocotb/libs/libcocotbvpi_ghdl.so'
+/home/shen/miniconda3/envs/py3_32/lib/python3.7/site-packages/cocotb/libs/libcocotbvpi_ghdl.so: wrong ELF class: ELFCLASS32
+ghdl:error: cannot load VPI module '/home/shen/miniconda3/envs/py3_32/lib/python3.7/site-packages/cocotb/libs/libcocotbvpi_ghdl.so'
+make[1]: *** [/home/shen/miniconda3/envs/py3_32/lib/python3.7/site-packages/cocotb/share/makefiles/simulators/Makefile.ghdl:77: results.xml] Error 1
+make[1]: Leaving directory '/home/shen/Desktop/VSimProjects/PulseWidthFilter/sim'
+make: *** [/home/shen/miniconda3/envs/py3_32/lib/python3.7/site-packages/cocotb/share/makefiles/Makefile.inc:40: sim] Error 2
